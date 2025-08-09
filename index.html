@@ -4,7 +4,6 @@
   <title>
     Rainbow Mentors
   </title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
@@ -15,6 +14,7 @@
       background-position: center;
       background-repeat: no-repeat;
       padding-top: 70px;
+
     }
 
     .top-bar {
@@ -82,7 +82,6 @@
       border: none;
       background-color: rgb(34, 34, 34);
       height: 60px;
-      opacity: 1;
       border-radius: 6px;
     }
 
@@ -107,8 +106,8 @@
       height: 310px;
       background-color: rgb(36, 36, 36);
       border-radius: 4px;
-      opacity: 1;
       visibility: hidden;
+      z-index: 10000;
     }
 
     .dashboard,
@@ -117,6 +116,7 @@
     .profile-settings,
     .help,
     .manage-acc {
+      user-select: none;
       margin-left: 0px;
       width: 98%;
       height: 50px;
@@ -133,6 +133,8 @@
       text-overflow: ellipsis;
       box-sizing: border-box;
       min-width: 0px;
+      user-select: none;
+      z-index: 10001;
     }
 
     .dashboard:hover,
@@ -235,7 +237,7 @@
       }
     }
 
-    @media (max-width: 1200px) {
+    @media (max-width: 1100px) {
 
       .menu-bar {
         position: fixed;
@@ -249,17 +251,18 @@
         background-color: rgb(36, 36, 36);
         border-radius: 4px;
         visibility: hidden;
+        
       }
 
       .intro {
-      position: relative;
-      margin-top: 0px;
-      background-color: rgba(0, 0, 0, 0.0);
-      border-radius: 16px;
-      top: 0px;
-      left: 2%;
-      width: 96%;
-    }
+        position: relative;
+        margin-top: 0px;
+        background-color: rgba(0, 0, 0, 0.0);
+        border-radius: 16px;
+        top: 0px;
+        left: 2%;
+        width: 96%;
+      }
     }
   </style>
 </head>
@@ -330,6 +333,3 @@
   </div>
   <script src="script.js"></script>
 </body>
-
-
-
