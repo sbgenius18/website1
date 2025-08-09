@@ -5,198 +5,414 @@
     Rainbow Mentors
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      background-color: #f4f4f7;
-      background-image: url('bg.webp');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      padding-top: 70px;
+    @media (orientation: landscape) {
+      body {
+        background-color: #f4f4f7;
+        background-image: url('bg.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding-top: 70px;
+      }
+
+      .top-bar {
+        position: fixed;
+        width: 100%;
+        height: 76px;
+        top: 0px;
+        left: 0px;
+        background-color: rgb(34, 34, 34);
+        z-index: 9999;
+      }
+
+      .buttons-top {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        height: 100%;
+      }
+
+      .home,
+      .Courses,
+      .about,
+      .login {
+        width: 8vw;
+        padding: 0px;
+        margin: 0px;
+        border: none;
+        background-color: rgb(34, 34, 34);
+        color: white;
+        font-size: 16px;
+        height: 100%;
+        font-family: 'Poppins', sans-serif;
+        cursor: pointer;
+      }
+
+      .home {
+        background-color: rgb(184, 50, 50);
+      }
+
+      .home:hover,
+      .Courses:hover,
+      .about:hover,
+      .login:hover {
+        background-color: rgb(55, 65, 75);
+        transition: background-color 0.2s ease;
+      }
+
+      .home:active,
+      .Courses:active,
+      .about:active,
+      .login:active {
+        background-color: rgb(60, 70, 80);
+        transition: background-color 0.1s ease;
+      }
+
+
+      .menu {
+        position: fixed;
+        padding-left: 10px;
+        padding-right: 10px;
+        bottom: 10px;
+        right: 10px;
+        border: none;
+        background-color: rgb(34, 34, 34);
+        height: 60px;
+        border-radius: 6px;
+      }
+
+      .menu:hover {
+        background-color: rgb(45, 45, 45);
+        transition: background-color 0.2s ease;
+      }
+
+      .menu:active {
+        background-color: rgb(50, 50, 50);
+        transition: background-color 0.1s ease;
+      }
+
+      .menu-bar {
+        position: fixed;
+        right: 10px;
+        bottom: 80px;
+        width: 19%;
+        height: 310px;
+        background-color: rgb(36, 36, 36);
+        border-radius: 4px;
+        visibility: hidden;
+      }
+
+      .acc {
+        position: absolute;
+        left: 120px;
+        top: 15px;
+      }
+
+      .acc-name {
+        position: relative;
+        top: 70px;
+        color: cyan;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+        font-size: 12px;
+      }
+
+      .dashboard,
+      .enrolled-courses,
+      .discussion,
+      .profile-settings,
+      .help,
+      .manage-acc {
+        margin-left: 0px;
+        width: 98%;
+        height: 50px;
+        text-align: left;
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        background-color: rgb(36, 36, 36);
+        color: white;
+        border: none;
+        padding-left: 20px;
+        border-radius: 25px;
+        cursor: pointer;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .dashboard:hover,
+      .enrolled-courses:hover,
+      .discussion:hover,
+      .profile-settings:hover,
+      .help:hover,
+      .manage-acc:hover {
+        background-color: rgb(46, 46, 46);
+      }
+
+      .dashboard:active,
+      .enrolled-courses:active,
+      .discussion:active,
+      .profile-settings:active,
+      .help:active,
+      .manage-acc:active {
+        background-color: rgb(56, 56, 56);
+      }
+
+      .options {
+        position: absolute;
+        top: 5px;
+      }
+
+      .bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(100%);
+        z-index: -1;
+      }
+
+      .heading {
+        position: relative;
+        text-align: center;
+        padding-top: 25px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-size: 50px;
+        font-weight: bold;
+        color: white;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      .intro {
+        position: relative;
+        margin-top: 0px;
+        background-color: rgba(0, 0, 0, 0.0);
+        border-radius: 16px;
+        top: 0px;
+        left: 2%;
+        width: 65%;
+      }
+
+      .intro-sub,
+      .para2,
+      .para3 {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        color: black;
+        text-align: justify;
+        font-family: 'Poppins', sans-serif;
+        font-size: 25px;
+      }
     }
 
-    .top-bar {
-      position: fixed;
-      width: 100%;
-      height: 76px;
-      top: 0px;
-      left: 0px;
-      background-color: rgb(34, 34, 34);
-      z-index: 9999;
-    }
+    @media (orientation: portrait) {
+      body {
+        background-color: #f4f4f7;
+        background-image: url('bg.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding-top: 70px;
+      }
 
-    .buttons-top {
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      height: 100%;
-    }
+      .top-bar {
+        position: fixed;
+        width: 100%;
+        height: 76px;
+        top: 0px;
+        left: 0px;
+        background-color: rgb(34, 34, 34);
+        z-index: 9999;
+      }
 
-    .home,
-    .Courses,
-    .about,
-    .login {
-      width: 8vw;
-      padding: 0px;
-      border: none;
-      background-color: rgb(34, 34, 34);
-      color: white;
-      font-size: 16px;
-      height: 100%;
-      font-family: 'Poppins', sans-serif;
-      cursor:pointer;
-    }
+      .buttons-top {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        height: 100%;
+      }
 
-    .home:hover,
-    .Courses:hover,
-    .about:hover,
-    .login:hover {
-      background-color: rgb(55, 65, 75);
-      transition: background-color 0.2s ease;
-    }
+      .home,
+      .Courses,
+      .about,
+      .login {
+        width: 8vw;
+        padding: 0px;
+        margin: 0px;
+        border: none;
+        background-color: rgb(34, 34, 34);
+        color: white;
+        font-size: 16px;
+        height: 100%;
+        font-family: 'Poppins', sans-serif;
+        cursor: pointer;
+      }
 
-    .home:active,
-    .Courses:active,
-    .about:active,
-    .login:active {
-      background-color: rgb(60, 70, 80);
-      transition: background-color 0.1s ease;
-    }
+      .home {
+        background-color: rgb(184, 50, 50);
+      }
+
+      .home:hover,
+      .Courses:hover,
+      .about:hover,
+      .login:hover {
+        background-color: rgb(55, 65, 75);
+        transition: background-color 0.2s ease;
+      }
+
+      .home:active,
+      .Courses:active,
+      .about:active,
+      .login:active {
+        background-color: rgb(60, 70, 80);
+        transition: background-color 0.1s ease;
+      }
 
 
-    .menu {
-      position: fixed;
-      padding-left: 10px;
-      padding-right: 10px;
-      bottom : 10px;
-      right: 10px;
-      border: none;
-      background-color: rgb(34, 34, 34);
-      height: 60px;
-      border-radius: 6px;
-    }
+      .menu {
+        position: fixed;
+        padding-left: 10px;
+        padding-right: 10px;
+        bottom: 10px;
+        right: 10px;
+        border: none;
+        background-color: rgb(34, 34, 34);
+        height: 60px;
+        border-radius: 6px;
+      }
 
-    .menu:hover {
-      background-color: rgb(45, 45, 45);
-      transition: background-color 0.2s ease;
-    }
+      .menu:hover {
+        background-color: rgb(45, 45, 45);
+        transition: background-color 0.2s ease;
+      }
 
-    .menu:active {
-      background-color: rgb(50, 50, 50);
-      transition: background-color 0.1s ease;
-    }
+      .menu:active {
+        background-color: rgb(50, 50, 50);
+        transition: background-color 0.1s ease;
+      }
 
-    .menu-bar {
-      position: fixed;
-      right: 10px;
-      bottom: 80px;
-      width: 19%;
-      height: 310px;
-      background-color: rgb(36, 36, 36);
-      border-radius: 4px;
-      visibility: hidden;
-    }
+      .menu-bar {
+        position: fixed;
+        right: 10px;
+        bottom: 80px;
+        width: 19%;
+        height: 310px;
+        background-color: rgb(36, 36, 36);
+        border-radius: 4px;
+        visibility: hidden;
+      }
 
-    .acc {
-      position: absolute;
-      left: 120px;
-      top: 15px;
-    }
+      .acc {
+        position: absolute;
+        left: 120px;
+        top: 15px;
+      }
 
-    .acc-name{
-      position: relative;
-      top: 70px;
-      color: cyan;
-      text-align: center;
-      font-family: 'Poppins', sans-serif;
-      font-size: 12px;
-    }
+      .acc-name {
+        position: relative;
+        top: 70px;
+        color: cyan;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+        font-size: 12px;
+      }
 
-    .dashboard,
-    .enrolled-courses,
-    .discussion,
-    .profile-settings,
-    .help,
-    .manage-acc{
-      margin-left: 0px;
-      width: 98%;
-      height: 50px;
-      text-align: left;
-      font-family: 'Poppins', sans-serif;
-      font-size: 16px;
-      background-color: rgb(36,36,36);
-      color: white;
-      border: none;
-      padding-left: 20px;
-      border-radius: 25px;
-      cursor:pointer;
-      white-space: nowrap;           
-      text-overflow: ellipsis; 
-    }
+      .dashboard,
+      .enrolled-courses,
+      .discussion,
+      .profile-settings,
+      .help,
+      .manage-acc {
+        margin-left: 0px;
+        width: 98%;
+        height: 50px;
+        text-align: left;
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        background-color: rgb(36, 36, 36);
+        color: white;
+        border: none;
+        padding-left: 20px;
+        border-radius: 25px;
+        cursor: pointer;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
 
-    .dashboard:hover,
-    .enrolled-courses:hover,
-    .discussion:hover,
-    .profile-settings:hover,
-    .help:hover,
-    .manage-acc:hover{
-      background-color: rgb(46,46,46);
-    }
+      .dashboard:hover,
+      .enrolled-courses:hover,
+      .discussion:hover,
+      .profile-settings:hover,
+      .help:hover,
+      .manage-acc:hover {
+        background-color: rgb(46, 46, 46);
+      }
 
-    .dashboard:active,
-    .enrolled-courses:active,
-    .discussion:active,
-    .profile-settings:active,
-    .help:active,
-    .manage-acc:active{
-      background-color: rgb(56,56,56);
-    }
+      .dashboard:active,
+      .enrolled-courses:active,
+      .discussion:active,
+      .profile-settings:active,
+      .help:active,
+      .manage-acc:active {
+        background-color: rgb(56, 56, 56);
+      }
 
-    .options{
-      position:absolute;
-      top:5px;
-    }
-    .bg{
-      position: fixed;       
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;     
-      filter: brightness(100%);
-      z-index: -1;
-    }
-    .heading{
-      position: relative;
-      text-align: center;
-      padding-top: 10px;
-      margin-top: 0px;
-      margin-bottom: 0px;
-      font-size:50px;
-      font-weight: bold;
-      color: white;
-      font-family: 'Poppins', sans-serif;
-    }
-    .intro{
-      position:relative;
-      margin-top: 0px;
-      background-color: rgba(0,0,0,0.0);
-      border-radius: 16px;
-      top: 0px;
-      left: 2%;
-      width: 65%;
-    }
-    .intro-sub,.para2,.para3{
-      padding-top: 10px;
-      padding-bottom: 10px;
-      padding-left: 20px;
-      padding-right: 20px;
-      color: black;
-      text-align: justify;
-      font-family: 'Poppins', sans-serif;
-      font-size: 25px;
+      .options {
+        position: absolute;
+        top: 5px;
+      }
+
+      .bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(100%);
+        z-index: -1;
+      }
+
+      .heading {
+        position: relative;
+        text-align: center;
+        padding-top: 25px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-size: 50px;
+        font-weight: bold;
+        color: white;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      .intro {
+        position: relative;
+        margin-top: 0px;
+        background-color: rgba(0, 0, 0, 0.0);
+        border-radius: 16px;
+        top: 0px;
+        left: 2%;
+        width: 96%;
+      }
+
+      .intro-sub,
+      .para2,
+      .para3 {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        color: black;
+        text-align: justify;
+        font-family: 'Poppins', sans-serif;
+        font-size: 25px;
+      }
     }
   </style>
 </head>
@@ -249,16 +465,21 @@
   </p>
   <div class="intro">
     <p class="intro-sub">
-      At Rainbow Mentors, LLC, we believe that learning and growth have no age limit. Whether you’re a curious child, a busy professional, or a retired soul seeking new skills — age is no bar. With the grace of God and our Gurus, we are blessed to share knowledge, well-being, and joy through a harmonious blend of ancient wisdom and modern learning. Our classes are designed to meet you exactly where you are, guiding you at your own pace.
+      At Rainbow Mentors, LLC, we believe that learning and growth have no age limit. Whether you’re a curious child, a
+      busy professional, or a retired soul seeking new skills — age is no bar. With the grace of God and our Gurus, we
+      are blessed to share knowledge, well-being, and joy through a harmonious blend of ancient wisdom and modern
+      learning. Our classes are designed to meet you exactly where you are, guiding you at your own pace.
     </p>
     <p class="para2">
-      A calm and blissful mind is a powerful foundation — it learns better, lives deeper, and uplifts you on every step of your journey, whether for personal growth, spiritual fulfillment, or even monetary progress.
+      A calm and blissful mind is a powerful foundation — it learns better, lives deeper, and uplifts you on every step
+      of your journey, whether for personal growth, spiritual fulfillment, or even monetary progress.
     </p>
     <p class="para3">
-      Through the mindful practice of Yoga, the timeless beauty of Sanskrit, the soulful depth of music and sacred chants, and the clarity found in subjects like Math and Cybersecurity, our offerings aim to awaken the inner core of strength, clarity, and purpose — nurturing the body, mind, and spirit in harmony. Purposeful Teaching, Joyful Learning.
+      Through the mindful practice of Yoga, the timeless beauty of Sanskrit, the soulful depth of music and sacred
+      chants, and the clarity found in subjects like Math and Cybersecurity, our offerings aim to awaken the inner core
+      of strength, clarity, and purpose — nurturing the body, mind, and spirit in harmony. Purposeful Teaching, Joyful
+      Learning.
     </p>
   </div>
   <script src="script.js"></script>
 </body>
-
-
